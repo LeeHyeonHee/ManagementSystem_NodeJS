@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head style="margin : 1%; margin-top: 3%">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<% include ./nav/nav %>
+
+<body>
+
+    <form action="/test" method="POST" style="margin: 1%; margin-left: 2%">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter User ID" name="id" class="form-control ds-input" style="width: 30%" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" class="form-control ds-input" style="width: 30%" name="pw" required>
+
+        <table class="table" style="width:30%; height: 25%; margin-top: 3%">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">√</th>
+                    <th scope="col">앱 이름</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach(function(item, index){ %>
+                <tr>
+                    <th scope="row"><%= index + 1 %></th>
+                    <td><input type="checkbox" name="check" value="<%= item.appNo %>"></td>
+
+                    <td><%= item.appName %></td>
+
+                </tr>
+
+                <%  })%>
+
+            </tbody>
+        </table>
+        <input type="submit" value="확인" class="btn btn-secondary" style="width: 5%; height: 5%; margin-left: 30%; margin-bottom: 30%">
+    </form>
+</body>
+
+</html>

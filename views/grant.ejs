@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<% include ./nav/nav %>
+
+<body style=" margin-left: 10%; margin-right: 10%">
+
+    <form id="my_form" method="POST" action="/grant">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">√</th>
+                    <th scope="col">이름</th>
+                    <th scope="col">메일</th>
+                    <th scope="col">주소</th>
+                    <th scope="col">부서</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach(function(item, index){ %>
+                <tr>
+                    <th scope="row"><%= index + 1 %></th>
+                    <td><input type="checkbox" id="chkall" name="mycheck" value="<%= item.id %>"></td>
+                    <td><a href="/meminfo/<%= item.id %>"
+                            onclick="window.open(this.href,'팝업창','width=900, height=780, left=200, top=50, resizable=no, scrollbars=no'); return false;"><%= item.id %></a>
+                    </td>
+                    <td><%= item.email %> </td>
+                    <td><%= item.address %></td>
+                    <td>
+                        <% if(item.departName == null){ %>
+                        임시사용자
+                        <% }else{ %>
+                        <%= item.departName %>
+                        <% } %></td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+        <input type='button' onclick='check_all();' value='모두 선택' />
+        <input type='button' onclick='uncheck_all();' value='모두 해제' />
+        <select name="app" style="margin-left: 60%;">
+            <% app.forEach(function(item, index){ %>
+
+            <option value="<%= item.appNo %> "> <%= item.appName %> </option>
+
+            <% }); %>
+        </select>
+
+        <input type="submit" value="권한부여" class="btn btn-secondary">
+    </form>
+
+</body>
+
+<script>
+    function check_all() {
+        for (i = 0; i < my_form.mycheck.length; i++) {
+            my_form.mycheck[i].checked = true;
+        }
+    }
+    function uncheck_all() {
+        for (i = 0; i < my_form.mycheck.length; i++) {
+            my_form.mycheck[i].checked = false;
+        }
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title><%= msg %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<% include ./nav/nav %>
+
+<body>
+  <% mem.forEach(function(item, index){ %>
+  <h1><%= item.name %> 님 환영합니다.</h1>
+
+  <%  }) %>
+
+  <% if(msg) { %>
+  <h2> <%= mem[0].name %> 님의 권한 목록</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">앱이름</th>
+        <th scope="col">승인날짜</th>
+        <th scope="col">승인구분</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach(function(item, index){ %>
+      <tr>
+        <th scope="row"><%= index +1 %></th>
+        <td><%= item.appName %></td>
+        <td><%= item.authDate %></td>
+        <td><%= division %></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  <% }else { %>
+  
+  
+
+    <h1>로그인할 경우 권한목록이 표시됩니다.</h1>
+  
+  
+    <% } %>
+
+</body>
+
+</html>

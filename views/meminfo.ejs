@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        /*table {width:800}*/
+        table,
+        th,
+        td {
+            border: 1px solid rgb(130, 130, 130);
+            border-collapse: collapse;
+            padding: 10px
+        }
+
+        /*서브타이틀*/
+        .signSubTitle {
+            color: black;
+            background-color: rgb(150, 150, 150);
+            text-align: center;
+            font-weight: 1000;
+            font-size: 40px
+        }
+
+        thead,
+        th {
+            background-color: rgb(200, 200, 200);
+            ;
+        }
+
+        /*버텀부*/
+        tfoot {
+            text-align: center;
+        }
+
+        /*link*/
+
+        /*tbody*/
+        tbody a {
+            color: #333;
+        }
+
+        tbody a:link {
+            font-size: 12px;
+            font-family: 굴림;
+            text-decoration: none;
+        }
+
+        tbody a:visited {
+            font-size: 12px;
+            color: #333;
+            font-family: 굴림;
+            text-decoration: none;
+
+        }
+
+        tbody a:hover {
+            text-decoration: underline;
+        }
+
+        tbody a:active {
+            font-size: 13px;
+            font-family: 궁서;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+
+        <thead>
+            <colgroup>
+                <col width="200" />
+                <col width="800" />
+            </colgroup>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2" class="signSubTitle">
+                    회원 정보
+                </td>
+
+            </tr>
+            <tr>
+                <th style="font-size:20px;">아이디 </th>
+                <td style="height:10px;font-size:20px;width:100px;">
+                    <%= mem[0].id %>
+                </td>
+            </tr>
+            <tr>
+                <th style="font-size:20px;">이름 </th>
+                <td style="height:10px;font-size:20px;width:100px;">
+                    <%- mem[0].name %>
+                </td>
+            </tr>
+            <tr>
+                <th style="font-size:20px;">주소 </th>
+                <td style="height:10px;font-size:20px;width:100px;">
+                    <%= mem[0].address %>
+                </td>
+            </tr>
+            <tr>
+                <th style="font-size:20px;">연락처</th>
+                <td style="height:10px;font-size:20px;width:100px;">
+                    <%= mem[0].phone %>
+                </td>
+            </tr>
+            <tr>
+                <th style="font-size:20px;">부서</th>
+                <td style="height:10px;font-size:20px;width:100px;">
+                    <% if(mem[0].departName == null){ %>
+                         임시사용자
+                    <% }else{ %>
+                         <%= mem[0].departName %>
+                    <% } %>
+                </td>
+            </tr>
+            <% if(data.length != 0){ %>
+            <tr>
+                <td colspan="3" class="signSubTitle"> 허가받은 프로그램</td>
+            </tr>
+            <% data.forEach(function (item, index) { %>
+            <tr>
+                <th style="width:180px;font-size:20px;"><%= index + 1 %></th>
+                <td style="height:10px;font-size:20px;width:780px;">
+                    <%= item.appName %></textarea>
+                </td>
+                <td>
+                    <button onclick="location.href='/delete/<%= item.id %>/<%= item.appNo %>'">삭제</button>
+                </td>
+            </tr>
+            <% }); %>
+            <% } %>
+        </tbody>
+    </table>
+    <button class="button" onclick="self.close();" style="width:100px;margin:10px;font-size: 20px;margin-left: 45%">닫
+        기</button>
+
+</body>
+
+</html>

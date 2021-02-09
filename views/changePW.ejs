@@ -1,0 +1,440 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="Generator" content="EditPlus®">
+
+    <meta name="Author" content="">
+
+    <meta name="Keywords" content="">
+
+    <meta name="Description" content="">
+
+    <title>Document</title>
+
+    <style>
+        @charset "utf-8";
+
+
+
+
+        html {
+            overflow-y: scroll;
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 0.75em;
+            height: 100%;
+            font-family: "맑은 고딕", "Malgun Gothic", sans-serif;
+        }
+
+        html,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        form,
+        fieldset,
+        img {
+            margin: 0;
+            padding: 0;
+            border: 0
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 1em
+        }
+
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block
+        }
+
+        header ul,
+        nav ul,
+        footer ul {
+            margin: 0;
+            padding: 0;
+            list-style: none
+        }
+
+        legend {
+            position: absolute;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999em;
+            overflow: hidden
+        }
+
+        label,
+        input,
+        button,
+        select,
+        img {
+            vertical-align: middle
+        }
+
+        input,
+        button {
+            margin: 0;
+            padding: 0;
+            font-size: 1em;
+        }
+
+        button,
+        input[type=submit] {
+            cursor: pointer;
+            font-family: "맑은 고딕", "Malgun Gothic", sans-serif;
+            outline: none
+        }
+
+        input[type=text],
+        input[type=password],
+        input[type=submit],
+        input[type=image],
+        button {
+            border-radius: 0;
+            font-size: 1em;
+            -webkit-appearance: none
+        }
+
+        textarea,
+        select {
+            font-size: 1em;
+            font-family: "맑은 고딕", "Malgun Gothic", sans-serif
+        }
+
+        textarea {
+            border-radius: 0;
+            -webkit-appearance: none
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+            word-break: break-all
+        }
+
+        hr {
+            display: none
+        }
+
+        pre {
+            overflow-x: scroll;
+            font-size: 1.1em
+        }
+
+        a:link,
+        a:visited {
+            color: #000;
+            text-decoration: none
+        }
+
+        a:hover,
+        a:focus {
+            color: #d63154;
+        }
+
+        ul,
+        li,
+        ol,
+        dt,
+        dd,
+        dl {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+
+
+
+        *,
+        :after,
+        :before {
+
+            -webkit-box-sizing: border-box;
+
+            -moz-box-sizing: border-box;
+
+            box-sizing: border-box;
+
+        }
+
+
+        .container {
+            margin: 0 auto;
+        }
+
+        .container {
+            margin: 0 auto;
+            max-width: 1220px;
+            padding: 0 10px
+        }
+
+        .idx-container {
+            margin: 0 auto;
+        }
+
+        #container_title {
+            margin: 60px 0 0;
+            padding: 0;
+            font-size: 2em;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #container_title span {
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .idx-container #container_title {
+            display: none
+        }
+
+
+
+
+        @media (max-width: 969px) {
+
+            #container_title {
+                margin: 30px 0 0;
+                font-size: 1.25em
+            }
+
+        }
+
+
+
+
+        #mb_login {
+            margin: 20px auto 10px;
+            ;
+            max-width: 400px;
+            padding: 20px;
+        }
+
+        #mb_login h1 {
+            position: absolute;
+            font-size: 0;
+            text-indent: -9999em;
+            line-height: 0;
+            overflow: hidden
+        }
+
+        #mb_login h2 {
+            margin: 0
+        }
+
+        #mb_login p {
+            padding: 10px 0;
+            line-height: 1.5em
+        }
+
+        #mb_login #login_frm {
+            position: relative
+        }
+
+        #mb_login #login_frm div {
+            padding: 10px 0;
+            text-align: right
+        }
+
+        #mb_login .frm_input {
+            width: 100%;
+            margin: 5px 0
+        }
+
+        #mb_login .btn_submit {
+            width: 100%;
+            height: 40px;
+            margin: 5px 0;
+            font-size: 1.083em;
+            font-weight: bold
+        }
+
+        #mb_login .mb_login_join {
+            margin: 10px 0 0
+        }
+
+        #mb_login .mb_login_join:after {
+            display: block;
+            visibility: hidden;
+            clear: both;
+            content: ""
+        }
+
+        #mb_login .mb_login_join h2 {
+            position: absolute;
+            font-size: 0;
+            line-height: 0;
+            overflow: hidden
+        }
+
+        #mb_login .mb_login_join a {
+            display: block;
+            float: left;
+            width: 50%;
+        }
+
+        #login_password_lost {
+            border-right: 1px solid #cdcdcd;
+        }
+
+        #mb_login #sns_login {
+            border: 1px solid #ddd;
+            padding: 0 15px 10px;
+            background: #f3f3f3
+        }
+
+
+
+
+        #mb_login_notmb {
+            background: #fff;
+            margin-top: 40px;
+        }
+
+        #mb_login_notmb h2 {
+            font-size: 1.25em;
+            padding: 10px 0 0;
+            margin-top: 50px
+        }
+
+        #mb_login_notmb p {
+            border: 0;
+            padding: 0;
+            margin: 10px;
+            color: #cccccc
+        }
+
+        #guest_privacy p {
+            border: 1px solid #ddd;
+            background: #fff;
+            color: #666;
+            min-height: 20px;
+            height: 200px;
+            padding: 10px;
+            text-align: left;
+            overflow-y: auto;
+            margin: 10px 0
+        }
+
+        #mb_login_notmb .btn_submit {
+            width: 100%;
+            display: block;
+            height: 40px;
+            line-height: 40px
+        }
+
+
+        #mb_login_od_wr {
+            background: #fff;
+            border-bottom: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        #mb_login_od_wr p {
+            border: 0;
+            text-align: left;
+        }
+
+        #mb_login_od_wr p strong {
+            display: inline
+        }
+
+        #mb_login_odinfo {
+            margin: 10px 0 0;
+            background: #f3f3f3;
+            padding: 10px
+        }
+
+        #mb_login_odinfo h2 {
+            font-size: 1.167em
+        }
+
+        .owl-stage {
+
+            margin: 0 auto;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+
+
+
+    <div id="container" class="container">
+
+        <h1 id="container_title"><span>비밀번호 변경</span></h1>
+
+
+
+
+        <div id="mb_login" class="mbskin">
+
+            <h1>비밀번호 변경   </h1>
+
+
+
+
+            <form name="flogin" action="/changePW/<%= id %>" onsubmit="return flogin_submit(this);" method="post" id="flogin">
+
+
+                <div id="login_frm">
+
+                    <label for="login_id" class="sound_only">아이디</label>
+
+                    <p><%= id %></p>
+
+                    <label for="login_pw" class="sound_only">비밀번호</label>
+
+                    <input type="password" name="pw" id="login_pw" placeholder="비밀번호" required=""
+                        class="frm_input required" maxlength="20">
+
+                        <label for="login_pw" class="sound_only">비밀번호 확인</label>
+                        
+                    <input type="password" name="pw2" id="login_pw2" placeholder="비밀번호확인" required=""
+                    class="frm_input required" maxlength="20">
+
+            
+                    <input type="submit" value="변경" class="btn_submit">
+
+                </div>
+
+
+
+
+
+
+        </div>
+        </form>

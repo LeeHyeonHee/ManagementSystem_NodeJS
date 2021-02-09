@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">권한 관리 페이지</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <% if(!msg) { %>
+              <a class="nav-item nav-link" href="/testpage">테스트</a>
+              <a class="nav-item nav-link" href="/login">로그인</a>
+            <% } else {%>
+              <a class="nav-item nav-link active" href="/grant"> 개인권한 부여</a>
+              <a class="nav-item nav-link" href="/grantTeam">부서권한 부여</a>
+              <a class="nav-item nav-link" href="/logout">로그아웃</a>
+            <% }%>
+          
+        </div>  
+        </div>
+      </nav>
+      
